@@ -4,6 +4,7 @@ const fs = require('fs');
 const promisify = require('util').promisify;
 const Midlleware = require('./midlleware');
 const ora = require('ora');
+const { readFileJSON } = require('./util');
 
 const LINE_MAX = 5;
 
@@ -19,9 +20,17 @@ class SnippetItem {
 }
 
 class SnippetLoader {
-  constructor({ entry, output, command, scope }) {
+  constructor(props) {
+    const { entry, target, output, command, scope } = props;
+
+    // package.json
     this.entry = entry;
+
+    // origin file
+    this.target = target;
+
     this.output = output;
+
     this.command = command;
 
     this.scope = scope;
@@ -45,7 +54,7 @@ class SnippetLoader {
   async readSnipetContent(ctx, next) {
     ctx.spinner.start(`snippet read conent start`);
 
-    const fileStream = fs.createReadStream(ctx.entry);
+    const fileStream = fs.createReadStream(ctx.target);
 
     const rl = readline.createInterface({
       input: fileStream,
@@ -85,14 +94,16 @@ class SnippetLoader {
   async writeSnippet(ctx, next) {
     ctx.spinner.start(`snippet write start`);
 
-    const { output, command, scope, content } = ctx;
+    const { entry, output, command, scope, content } = ctx;
+
+    const { name } = await readFileJSON(entry);
+
     const outputPath = path.resolve(
       __dirname,
       `${output}/${command}.code-snippets`.replace('//', '/')
     );
-
     const snippet = {
-      [command]: new SnippetItem({ command, scope, content }),
+      [`${name} ${command}`]: new SnippetItem({ command, scope, content }),
     };
 
     const str = JSON.stringify(snippet);

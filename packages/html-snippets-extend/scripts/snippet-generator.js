@@ -27,7 +27,8 @@ const {
   };
 
   const app = new SnippetLoader({
-    entry: fullPath,
+    entry: path.resolve(__dirname, '../package.json'),
+    target: fullPath,
     output: path.resolve(__dirname, '../snippets'),
     command: command || parseUrl.name,
     scope: scopeMap[ext],

@@ -15,7 +15,7 @@ const clear = require('clear');
 const ivewReg = /iview.code-snippets$/;
 
 (async () => {
-  // clear();
+  clear();
 
   const content = await figlet('IVEW SNIPPET');
 

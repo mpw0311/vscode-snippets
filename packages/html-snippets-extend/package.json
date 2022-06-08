@@ -5,7 +5,7 @@
     "publisher": "maopengwei",
     "version": "0.0.1",
     "engines": {
-        "vscode": "^1.67.0"
+        "vscode": "^1.66.0"
     },
     "categories": [
         "Snippets"
@@ -15,6 +15,10 @@
         "build:readme": "node ./scripts/readme-generator.js",
         "snippet": "node ./scripts/snippet-generator.js",
         "snippet:html": "npm run snippet"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mpw0311/vscode-snippets.git"
     },
     "contributes": {
         "snippets": [

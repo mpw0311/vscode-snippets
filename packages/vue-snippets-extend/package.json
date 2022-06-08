@@ -5,7 +5,7 @@
     "publisher": "maopengwei",
     "version": "0.0.1",
     "engines": {
-        "vscode": "^1.67.0"
+        "vscode": "^1.66.0"
     },
     "scripts": {
         "build": "npm run build:readme && vsce package",
@@ -16,6 +16,10 @@
     "categories": [
         "Snippets"
     ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mpw0311/vscode-snippets.git"
+    },
     "contributes": {
         "snippets": [
             {

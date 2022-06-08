@@ -1,6 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 const util = require('util');
+const { readFileJSON } = require('./util');
 // 进度条
 const ora = require('ora');
 
@@ -10,18 +11,6 @@ const promisify = util.promisify;
 const MAX_LENGTH = 220;
 const MIN_LENGTH = 16;
 
-async function toJSON(path) {
-  const packageBuf = await promisify(fs.readFile)(path);
-
-  // let str = ""
-  // try {
-  //   str = await promisify(fs.readFile)(path, { encoding: 'utf-8' });
-  //   str = JSON.parse(str);
-  // } catch (e) {
-  //   console.log(str);
-  // }
-  return new Function(`return (${packageBuf.toString('utf-8')})`)();
-}
 const JSONParseBody = (body) => {
   return body.reduce((preVal, val) => {
     return preVal + val.replaceAll('\t', '').replaceAll('\n', ' ');
@@ -30,7 +19,7 @@ const JSONParseBody = (body) => {
 
 function readSnippetFiles(paths) {
   return Promise.all(
-    paths.map((item) => item.path).map((path) => toJSON(path))
+    paths.map((item) => item.path).map((path) => readFileJSON(path))
   );
 }
 
@@ -47,7 +36,7 @@ class MarkdownLoader {
   async packageLoader(ctx, next) {
     ctx.spinner.start('load package start');
 
-    const packageJson = await toJSON(ctx.entry);
+    const packageJson = await readFileJSON(ctx.entry);
     const snippets = packageJson.contributes.snippets;
 
     ctx.snippets = snippets;
