@@ -1,7 +1,8 @@
 {
     "name": "iview-snippets-extend",
-    "displayName": "",
+    "displayName": "iview-snippets-extend",
     "description": "",
+    "publisher": "maopengwei",
     "version": "0.0.1",
     "engines": {
         "vscode": "^1.67.0"
@@ -12,7 +13,8 @@
     "scripts": {
         "build": "npm run build:readme && vsce package",
         "build:readme": "node ./scripts/readme-generator.js",
-        "snippet": "node ./scripts/snippet-generator.js"
+        "snippet": "node ./scripts/snippet-generator.js",
+        "snippet:iview": "npm run snippet"
     },
     "contributes": {
         "snippets": [
