@@ -1,0 +1,12 @@
+{
+  "js-extend uuid": {
+    "prefix": ["uuid"],
+    "body": ["\"$UUID\""],
+    "description": "uuid"
+  },
+  "js-extend random": {
+    "prefix": ["random"],
+    "body": ["\"$RANDOM\""],
+    "description": "random 长度为6的10进制随机数字字符串"
+  }
+}

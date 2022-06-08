@@ -1,0 +1,36 @@
+{
+    "name": "iview-snippets-extend",
+    "displayName": "",
+    "description": "",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.67.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "scripts": {
+        "build": "npm run build:readme && vsce package",
+        "build:readme": "node ./scripts/readme-generator.js",
+        "snippet": "node ./scripts/snippet-generator.js"
+    },
+    "contributes": {
+        "snippets": [
+            {
+                "language": "vue-html",
+                "path": "./snippets/iview.code-snippets"
+            },
+            {
+                "language": "vue-html",
+                "path": "./snippets/form-item.code-snippets"
+            }
+        ]
+    },
+    "dependencies": {
+        "clear": "^0.1.0",
+        "figlet": "^1.5.2"
+    },
+    "devDependencies": {
+        "snippet-compiler": "^1.0.0"
+    }
+}

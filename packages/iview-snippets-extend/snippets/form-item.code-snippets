@@ -1,0 +1,23 @@
+{
+  "iview-extend formItem-input": {
+    "prefix": ["i-formItem-input"],
+    "body": [
+      "<FormItem label=\"$1\" prop=\"$2\">\n\t<Input v-model=\"$3\" class=\"input-select\" placeholder=\"请输入\" />\n</FormItem>"
+    ],
+    "description": "表单子组件"
+  },
+  "iview-extend formItem-select": {
+    "prefix": ["i-formItem-select"],
+    "body": [
+      "<FormItem label=\"$1\" prop=\"$2\">\n\t<Select v-model=\"$3\" class=\"input-select\" placeholder=\"请选择\" clearable>\n\t\t<Option v-for=\"item in []\" :value=\"item.value\" :key=\"item.value\">{{\n\t\t\titem.label\n\t\t}}</Option>\n\t</Select>\n</FormItem>"
+    ],
+    "description": "表单子组件"
+  },
+  "iview-extend formItem-datePicker": {
+    "prefix": ["i-formItem-datePicker"],
+    "body": [
+      "<FormItem label=\"$1\" prop=\"$2\">\n\t<DatePicker\n\t\tv-model=\"$3\"\n\t\ttype=\"daterange\"\n\t\tclass=\"input-select\"\n\t\tplaceholder=\"请选择\"\n\t/>\n</FormItem>"
+    ],
+    "description": "表单子组件"
+  }
+}

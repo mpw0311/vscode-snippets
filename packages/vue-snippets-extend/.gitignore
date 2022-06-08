@@ -1,0 +1,5 @@
+node_modules
+
+snippets/default.code-snippets
+
+*.vsix

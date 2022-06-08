@@ -1,0 +1,7 @@
+{
+  "html-extend html": {
+    "prefix": ["html"],
+    "body": ["<html>\n\t\n</html>"],
+    "description": "html 代码片段模板"
+  }
+}

@@ -1,0 +1,32 @@
+{
+    "name": "vue-snippets-extend",
+    "displayName": "",
+    "description": "",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.67.0"
+    },
+    "scripts": {
+        "build": "npm run build:readme && vsce package",
+        "build:readme": "node ./scripts/readme-generator.js",
+        "snippet": "node ./scripts/snippet-generator.js"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "vue",
+                "path": "./snippets/template.code-snippets"
+            }
+        ]
+    },
+    "devDependencies": {
+        "snippet-compiler": "^1.0.0"
+    },
+    "dependencies": {
+        "clear": "^0.1.0",
+        "figlet": "^1.5.2"
+    }
+}
