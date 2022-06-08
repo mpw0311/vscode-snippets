@@ -56,11 +56,11 @@ class MarkdownLoader {
 
     await next();
 
-    const rows = [`# ${ctx.title}`, `> ${ctx.description}`, ''];
+    const rows = [`# ${ctx.title}`, `> ${ctx.description}`];
 
-    rows.push(ctx.models);
+    rows.push(...ctx.models);
 
-    const text = rows.join('\r\n');
+    const text = rows.join('\r\r');
 
     await promisify(fs.writeFile)(ctx.output, text);
 
@@ -84,7 +84,7 @@ class MarkdownLoader {
 
         rows.push(...header, ...body);
 
-        return rows.join('\r\n');
+        return rows.join('\r');
       });
 
     ctx.models = await Promise.all(req);

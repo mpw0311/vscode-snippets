@@ -1,9 +1,1 @@
-# VUE SNIPPETS
-> 
-
-# vue
-> Vue 代码模板
-
-| Snippet    |   Type   | Purpose       |
-| :--------- | :------: | :------------ |
-|`template`|vue|`<template><div></div></template><script>export default {name: '$TM_FILENAME_BASE',components: {},data() {return {};},computed: {},methods: {},watch: {},created() {},mounted() {},};</script>`|
+# VUE SNIPPETS> # vue> Vue 代码模板| Snippet    |   Type   | Purpose       || :--------- | :------: | :------------ ||`template`|vue|`<template><div></div></template><script>export default {name: '$TM_FILENAME_BASE',components: {},data() {return {};},computed: {},methods: {},watch: {},created() {},mounted() {},};</script>`|

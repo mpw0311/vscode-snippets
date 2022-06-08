@@ -1,9 +1,1 @@
-# html-snippet-extend SNIPPETS
-> 
-
-# html
-> html 代码片段
-
-| Snippet    |   Type   | Purpose       |
-| :--------- | :------: | :------------ |
-|`html`|html|html 代码片段模板：`<html>  </html>`|
+# html-snippet-extend SNIPPETS> # html> html 代码片段| Snippet    |   Type   | Purpose       || :--------- | :------: | :------------ ||`html`|html|html 代码片段模板：`<html>  </html>`|
