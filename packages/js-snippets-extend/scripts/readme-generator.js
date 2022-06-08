@@ -14,7 +14,7 @@ const clear = require('clear');
 
 
 (async () => {
-  clear();
+  // clear();
 
   const content = await figlet('JS SNIPPET');
 

@@ -1,8 +1,8 @@
-# iview-snippet-extend SNIPPETS
+# VUE SNIPPETS
 > 
 
 # vue
-> js 代码片段
+> Vue 代码模板
 
 | Snippet    |   Type   | Purpose       |
 | :--------- | :------: | :------------ |
